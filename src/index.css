@@ -1,0 +1,26 @@
+/* Minimal globals. The app controls its own typography/colors in App.jsx,
+   so we deliberately avoid template defaults that override headings or
+   force a dark color-scheme (that's what was turning headings near-white). */
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* This is a light app; pin the canvas so dark-mode browsers never
+     bleed a dark background behind the UI. */
+  background: #e8e4db;
+  /* Decorative illustrations intentionally bleed past their container edge;
+     don't let that turn into page-level horizontal scroll/drag. */
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
